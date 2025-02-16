@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Upload</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>PDF Table Extractor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h2>Upload a File</h2>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <button type="submit">Upload</button>
-    </form>
+    <div class="container">
+        <h1>📄 PDF Table Extractor</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="pdf_file">Upload PDF:</label>
+            <input type="file" name="pdf_file" required>
+            <label for="serial_number">Enter Serial Number:</label>
+            <input type="text" name="serial_number" required>
+            <button type="submit">Extract & Download</button>
+        </form>
+    </div>
 </body>
 </html>
