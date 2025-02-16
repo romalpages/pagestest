@@ -110,7 +110,7 @@ def index():
             generate_pdf_with_filtered_data(filtered_data, output_pdf_path)
             return send_file(output_pdf_path, as_attachment=True)
 
-    return render_template("index.html")
+    return render_template("upload.html")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
