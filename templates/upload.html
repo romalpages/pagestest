@@ -3,89 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Extractor</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            background-color: #28a745;
-            padding: 10px;
-            color: white;
-            text-align: center;
-            font-size: 18px;
-        }
-        .container {
-            width: 80%;
-            margin: 50px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            font-weight: bold;
-        }
-        select, input[type="file"], button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .upload-box {
-            border: 2px dashed #ccc;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            background: #f9f9f9;
-        }
-        .btn-extract {
-            background-color: #d4edda;
-            border: 1px solid #c3e6cb;
-            color: #155724;
-            padding: 10px;
-            cursor: pointer;
-            text-align: center;
-            border-radius: 5px;
-        }
-    </style>
+    <title>File Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="navbar">PDF Extractor</div>
-    <div class="container">
-        <h2>PDF Extractor</h2>
-        <div class="form-group">
-            <label for="clients">* Clients</label>
-            <select id="clients">
-                <option>Select Clients</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="extract-value">* Select a value to extract</label>
-            <select id="extract-value">
-                <option>Select a value to extract</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>* Remove non-extracted pages?</label>
-            <input type="checkbox">
-        </div>
-        <div class="form-group">
-            <label>* Upload PDF file</label>
-            <div class="upload-box">Drop file here or click to upload</div>
-        </div>
-        <button class="btn-extract">✓ Extract PDF</button>
-    </div>
+    <h2>Upload a File</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Upload</button>
+    </form>
 </body>
 </html>
