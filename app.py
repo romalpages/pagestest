@@ -79,6 +79,7 @@ def generate_pdf_with_filtered_data(filtered_data, output_pdf_path):
             ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
             ('FONTNAME', (0, 1), (-1, 1), 'Helvetica-Bold'),
             ('WORDWRAP', (0, 0), (-1, -1), 'COLUMNS')
+            ('WORDWRAP', (0,0), (-1,-1) , 'COLUMNS')
         ])
         table_object.setStyle(table_style)
         
